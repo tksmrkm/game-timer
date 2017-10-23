@@ -25,7 +25,8 @@ Sparky.task('config', () => {
             SVGPlugin(),
             CSSPlugin(),
             WebIndexPlugin({
-                template: 'src/index.html'
+                template: 'src/index.html',
+                path: './'
             }),
             isProduction &&
             QuantumPlugin({
