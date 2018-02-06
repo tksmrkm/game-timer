@@ -6,19 +6,25 @@
   "author": "tksmrkm <nis.murakami@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "fuse-box": "^2.3.3",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
     "material-ui": "^1.0.0-beta.17",
-    "tslib": "^1.8.0",
-    "typescript": "^2.5.3",
-    "uglify-js": "^3.1.5",
+    "parcel-bundler": "^1.5.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "reflect-metadata": "^0.1.10"
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.7.2"
   },
   "scripts": {
-    "build": "node fuse build",
-    "dist": "node fuse dist",
-    "watch": "node fuse",
-    "deploy": "git subtree push --prefix dist/ origin gh-pages"
+    "clear": "rm dist/*",
+    "build": "parcel build src/index.html --public-url ./",
+    "watch": "parcel src/index.html",
+    "deploy": "yarn run clear && yarn run build"
   }
 }
