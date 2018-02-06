@@ -1,9 +1,13 @@
 import { combineReducers } from 'redux'
 
 import app from './app'
+import players from './players'
 import routes from './routes'
+import timer from './timer'
 
 export default combineReducers({
     app,
-    routes
+    players,
+    routes,
+    timer
 })
