@@ -30,6 +30,7 @@
     "clear": "rm dist/*",
     "build": "parcel build src/index.html --public-url ./",
     "watch": "parcel src/index.html",
-    "deploy": "yarn run clear && yarn run build"
+    "clean:build": "yarn run clear && yarn run build",
+    "deploy": "yarn run clean:build && git subtree push --prefix dist/ origin gh-pages"
   }
 }
