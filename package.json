@@ -30,10 +30,10 @@
     "uuid": "^3.2.1"
   },
   "scripts": {
-    "clear": "rm dist/*",
-    "build": "parcel build src/index.html --public-url ./",
+    "clear": "rm -rf dist",
+    "build:simple": "parcel build src/index.html --public-url ./",
     "watch": "parcel src/index.html",
-    "clean:build": "yarn run clear && yarn run build",
+    "build": "yarn run clear && yarn run build:simple",
     "deploy": "yarn run clean:build && git subtree push --prefix dist/ origin gh-pages"
   }
 }
