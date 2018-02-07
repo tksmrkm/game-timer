@@ -10,7 +10,7 @@ export default ({page, handleOnClick}) => (
         button
         component={Link}
         to={page.path}
-        onClick={() => handleOnClick(false)}
+        onClick={() => handleOnClick(false, page.label)}
     >
         <ListItemText primary={page.label} />
     </ListItem>

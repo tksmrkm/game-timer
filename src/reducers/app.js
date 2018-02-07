@@ -1,7 +1,11 @@
-import { SET_DRAWER_STATE } from '../actions'
+import {
+    SET_DRAWER_STATE,
+    SET_PAGE_TITLE
+} from '../actions'
 
 const initState = {
-    drawer: false
+    drawer: false,
+    title: 'Home'
 }
 
 export default (state = initState, action) => {
@@ -9,6 +13,10 @@ export default (state = initState, action) => {
         case SET_DRAWER_STATE:
             return Object.assign({}, state, {
                 drawer: action.payload
+            })
+        case SET_PAGE_TITLE:
+            return Object.assign({}, state, {
+                title: action.payload
             })
         default:
             return state
