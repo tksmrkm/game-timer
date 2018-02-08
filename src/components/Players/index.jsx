@@ -2,11 +2,28 @@ import React from 'react'
 
 import {
     Grid,
-    Typography
+    List,
+    ListItem,
+    ListItemText
 } from 'material-ui'
 
-export default () => (
-    <Grid item xs>
-        <Typography type="title">Players</Typography>
-    </Grid>
-)
+import AddIcon from 'material-ui-icons/Add'
+
+import AddForm from '../../containers/Players/AddForm'
+
+export default ({players}) => {
+    const playerNodes = players.map(player => (
+        <ListItem key={player.id}>
+            <ListItemText primary={player.name} />
+        </ListItem>
+    ))
+
+    return (
+        <Grid item xs>
+            <List>
+                {playerNodes}
+            </List>
+            <AddForm />
+        </Grid>
+    )
+}

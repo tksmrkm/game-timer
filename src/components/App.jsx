@@ -11,7 +11,7 @@ import Drawer from '../containers/Drawer'
 import Toolbar from '../containers/Toolbar'
 import ListItem from '../containers/ListItem'
 import Home from './Home'
-import Players from './Players'
+import Players from '../containers/Players'
 import Timer from './Timer'
 
 const pages = [

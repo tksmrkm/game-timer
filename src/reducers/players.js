@@ -6,16 +6,19 @@ import {
 
 const initState = []
 
+let index = 0
+
 const defaultPlayer = {
     id: '',
     name: '',
-    sort: 0,
+    sort: index++,
     timer: null
 }
 
 export default (state = initState, action) => {
     switch(action.type) {
         case ADD_PLAYER:
+            defaultPlayer.sort = index++
             return [
                 ...state,
                 Object.assign({}, defaultPlayer, action.payload)
