@@ -4,6 +4,8 @@ import { v4 } from 'uuid'
 import {
     Button,
     Dialog,
+    DialogContent,
+    DialogActions,
     Grid,
     TextField
 } from 'material-ui'
@@ -30,7 +32,10 @@ export default class extends React.Component {
         })
     }
 
-    handleSubmit() {
+    handleSubmit(e) {
+        if (e) {
+            e.preventDefault()
+        }
         this.props.handleSubmit(v4(), this.state.player.name)
         this.handleInput('')
     }
@@ -62,18 +67,24 @@ export default class extends React.Component {
                     open={this.state.dialog}
                     onClose={() => this.handleDialog(false)}
                 >
-                    <TextField
-                        fullWidth
-                        label="Name"
-                        id="inputPlayerName"
-                        value={this.state.player.name}
-                        onChange={e => this.handleInput(e.target.value)}
-                    />
-                    <Button
-                        onClick={() => this.handleSubmit()}
-                    >
-                        Submit
-                    </Button>
+                    <DialogContent>
+                        <form onSubmit={e => this.handleSubmit(e)}>
+                            <TextField
+                                fullWidth
+                                label="Name"
+                                id="inputPlayerName"
+                                value={this.state.player.name}
+                                onChange={e => this.handleInput(e.target.value)}
+                            />
+                        </form>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button
+                            onClick={() => this.handleSubmit()}
+                        >
+                            Submit
+                        </Button>
+                    </DialogActions>
                 </Dialog>
             </Grid>
         )
