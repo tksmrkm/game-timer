@@ -4,7 +4,7 @@ import { EDIT_TIMER } from '../actions'
 const initState = {
     total: 600,
     step: 60,
-    unit: 60
+    minimum: 60
 }
 
 export default (state = initState, action) => {
