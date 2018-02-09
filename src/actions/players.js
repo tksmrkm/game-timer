@@ -24,3 +24,13 @@ export const editPlayer = (id, key, value) => ({
         value
     }
 })
+
+export const SORT_PLAYER = 'SORT_PLAYER'
+export const sortPlayer = (pid, dragIndex, hoverIndex) => ({
+    type: SORT_PLAYER,
+    payload: {
+        pid,
+        dragIndex,
+        hoverIndex
+    }
+})

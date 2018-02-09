@@ -1,21 +1,21 @@
 import React from 'react'
 
-import {
-    Grid,
-    List,
-    ListItem,
-    ListItemText
-} from 'material-ui'
+import { Grid } from 'material-ui'
 
 import AddIcon from 'material-ui-icons/Add'
-
 import AddForm from '../../containers/Players/AddForm'
+
+import List from './List'
+import Item from '../../containers/Players/Item'
 
 export default ({players}) => {
     const playerNodes = players.map(player => (
-        <ListItem key={player.id}>
-            <ListItemText primary={player.name} />
-        </ListItem>
+        <Item
+            key={player.id}
+            pid={player.id}
+            primary={player.name}
+            sort={player.sort}
+        />
     ))
 
     return (
