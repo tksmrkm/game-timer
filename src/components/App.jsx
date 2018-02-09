@@ -12,7 +12,7 @@ import Toolbar from '../containers/Toolbar'
 import ListItem from '../containers/ListItem'
 import Home from './Home'
 import Players from './Players'
-import Timer from './Timer'
+import Timer from '../containers/Timer'
 
 const pages = [
     {
