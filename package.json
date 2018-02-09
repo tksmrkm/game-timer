@@ -39,6 +39,6 @@
     "build:simple": "parcel build src/index.html --public-url ./",
     "watch": "parcel src/index.html",
     "build": "yarn run clear && yarn run build:simple",
-    "deploy": "yarn run clean:build && git subtree push --prefix dist/ origin gh-pages"
+    "deploy": "yarn run build && git subtree push --prefix dist/ origin gh-pages"
   }
 }
