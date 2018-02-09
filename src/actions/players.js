@@ -34,3 +34,8 @@ export const sortPlayer = (pid, dragIndex, hoverIndex) => ({
         hoverIndex
     }
 })
+
+export const SHUFFLE_PLAYER = 'SHUFFLE_PLAYER'
+export const shufflePlayer = () => ({
+    type: SHUFFLE_PLAYER
+})

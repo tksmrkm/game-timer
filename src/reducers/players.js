@@ -2,7 +2,8 @@ import {
     ADD_PLAYER,
     EDIT_PLAYER,
     REMOVE_PLAYER,
-    SORT_PLAYER
+    SORT_PLAYER,
+    SHUFFLE_PLAYER
 } from '../actions'
 
 const initState = []
@@ -49,6 +50,18 @@ export default (state = initState, action) => {
 
                 return player
             }).sort((a, b) => a.sort - b.sort)
+
+        case SHUFFLE_PLAYER:
+            // fisher-yates
+            for (let i  = state.length - 1; i >= 0; i--) {
+                let rand = Math.floor(Math.random() * (i + 1))
+                let temp = state[i]
+                state[i] = state[rand]
+                state[rand] = temp
+                state[i].sort = i
+            }
+
+            return state.map(player => player)
 
         default:
             return state

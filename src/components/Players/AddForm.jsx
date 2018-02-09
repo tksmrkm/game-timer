@@ -11,6 +11,7 @@ import {
 } from 'material-ui'
 
 import AddIcon from 'material-ui-icons/Add'
+import ShuffleIcon from 'material-ui-icons/Shuffle'
 
 export default class extends React.Component {
     constructor(props) {
@@ -62,6 +63,18 @@ export default class extends React.Component {
                     }}
                 >
                     <AddIcon />
+                </Button>
+                <Button
+                    variant="fab"
+                    color="secondary"
+                    onClick={() => this.props.handleShufflePlayer()}
+                    style={{
+                        position: 'absolute',
+                        left: '15px',
+                        bottom: '15px'
+                    }}
+                >
+                    <ShuffleIcon />
                 </Button>
                 <Dialog
                     open={this.state.dialog}
