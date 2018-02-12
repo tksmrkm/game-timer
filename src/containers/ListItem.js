@@ -1,14 +1,12 @@
 import { connect } from 'react-redux'
 import ListItem from '../components/ListItem'
 import {
-    setDrawerState,
-    setPageTitle
+    setDrawerState
 } from '../actions'
 
 const mapDispatchToProps = dispatch => ({
     handleOnClick(state, label) {
         dispatch(setDrawerState(state))
-        dispatch(setPageTitle(label))
     }
 })
 

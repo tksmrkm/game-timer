@@ -48,7 +48,7 @@ const routes = pages.map(page => (
         key={page.key}
         exact
         path={page.path}
-        component={page.component}
+        render={props => React.createElement(page.component, Object.assign(props, {label: page.label}))}
     />
 ))
 

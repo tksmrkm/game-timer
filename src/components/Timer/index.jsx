@@ -7,50 +7,53 @@ import {
     FormControlLabel,
     TextField
 } from 'material-ui'
+import RouteComponent from '../../containers/RouteComponent'
 
-export default ({timer, handleEditTimer}) => (
-    <Grid item xs>
-        <TextField
-            select
-            fullWidth
-            label="Total Time(m)"
-            value={timer.total}
-            onChange={e => handleEditTimer('total', e.target.value)}
-            SelectProps={{
-                native: true
-            }}
-        >
-            {Array.from(new Array(61)).map((v, i) => (
-                <option key={i} value={i*60}>{i}</option>
-            ))}
-        </TextField>
-        <TextField
-            select
-            fullWidth
-            label="Step Time(s)"
-            value={timer.step}
-            onChange={e => handleEditTimer('step', e.target.value)}
-            SelectProps={{
-                native: true
-            }}
-        >
-            {Array.from(new Array(301)).map((v, i) => (
-                <option key={i} value={i}>{i}</option>
-            ))}
-        </TextField>
-        <TextField
-            select
-            fullWidth
-            label="Minimum Time(s)"
-            value={timer.minimum}
-            onChange={e => handleEditTimer('minimum', e.target.value)}
-            SelectProps={{
-                native: true
-            }}
-        >
-            {Array.from(new Array(301)).map((v, i) => (
-                <option key={i} value={i}>{i}</option>
-            ))}
-        </TextField>
-    </Grid>
+export default ({label, timer, handleEditTimer}) => (
+    <RouteComponent label={label}>
+        <Grid item xs>
+            <TextField
+                select
+                fullWidth
+                label="Total Time(m)"
+                value={timer.total}
+                onChange={e => handleEditTimer('total', e.target.value)}
+                SelectProps={{
+                    native: true
+                }}
+            >
+                {Array.from(new Array(61)).map((v, i) => (
+                    <option key={i} value={i*60}>{i}</option>
+                ))}
+            </TextField>
+            <TextField
+                select
+                fullWidth
+                label="Step Time(s)"
+                value={timer.step}
+                onChange={e => handleEditTimer('step', e.target.value)}
+                SelectProps={{
+                    native: true
+                }}
+            >
+                {Array.from(new Array(301)).map((v, i) => (
+                    <option key={i} value={i}>{i}</option>
+                ))}
+            </TextField>
+            <TextField
+                select
+                fullWidth
+                label="Minimum Time(s)"
+                value={timer.minimum}
+                onChange={e => handleEditTimer('minimum', e.target.value)}
+                SelectProps={{
+                    native: true
+                }}
+            >
+                {Array.from(new Array(301)).map((v, i) => (
+                    <option key={i} value={i}>{i}</option>
+                ))}
+            </TextField>
+        </Grid>
+    </RouteComponent>
 )

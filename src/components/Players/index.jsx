@@ -7,8 +7,9 @@ import AddForm from '../../containers/Players/AddForm'
 
 import List from './List'
 import Item from '../../containers/Players/Item'
+import RouteComponent from '../../containers/RouteComponent'
 
-export default ({players}) => {
+export default ({players, label}) => {
     const playerNodes = players.map(player => (
         <Item
             key={player.id}
@@ -19,11 +20,13 @@ export default ({players}) => {
     ))
 
     return (
-        <Grid item xs>
-            <List>
-                {playerNodes}
-            </List>
-            <AddForm />
-        </Grid>
+        <RouteComponent label={label}>
+            <Grid item xs>
+                <List>
+                    {playerNodes}
+                </List>
+                <AddForm />
+            </Grid>
+        </RouteComponent>
     )
 }
